@@ -1,0 +1,158 @@
+// 存放组件的通用样式
+@import "variable.styl"
+
+// 存放组件的通用样式
+*{
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+iframe {
+  border: 0;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+  color: $color-text;
+  font-size: $text-size;
+  overflow: hidden;
+  font-family: PingFangSC-Regular, PingFang SC,Microsoft YaHei,Hiragino Sans GB,SimSun,Arial,Helvetica Neue,Helvetica;
+}
+
+p,dl, ol, ul {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.clearfix
+  // display: inline-block
+  &:after
+    display: block
+    content: ''
+    height: 0
+    line-height: 0
+    clear: both
+    visiblity: hidden
+
+.border-box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+}
+.ml-auto
+  margin-left: auto !important;
+.ml-0
+  margin-left: 0 !important;
+.ml-15
+  margin-left: 15px !important;
+// 存放组件的通用样式
+// 默认弹出框样式
+.ant-modal {
+  .ant-modal-content {
+    .ant-modal-close {
+      margin-right: 10px;
+      .ant-modal-close-x {
+        width: 32px;
+        line-height: 28px;
+        font-size: 20px;
+      }
+    }
+    .ant-modal-header {
+      line-height: 32px;
+      padding: 0 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.1)
+      .ant-modal-title {
+        font-size: 18px;
+        font-family: Microsoft YaHei;
+        color: rgba(0,0,0,0.85);
+        line-height: 21px;
+        display: inline-block;
+      }
+    }
+    .ant-modal-body {
+      padding: 24px 40px 16px 40px;
+    }
+    .ant-modal-footer {
+      line-height: 50px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      background:rgba(247,247,247,1);
+      border-radius:0px 0px 3px 3px;
+      padding: 0
+    }
+  }
+  // 弹出框底部按钮居中
+  &.footer-center {
+    .ant-modal-footer {
+      text-align: center;
+    }
+  }
+  &.footer-default-btn {
+    .ant-modal-footer {
+      >button {
+        width: 72px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.child-2-8 {
+  >div {
+    height: 100%;
+    &:first-child {
+      width: 20%;
+    }
+    &:last-child {
+      width: 80%;
+    }
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-btn-default {
+  display: flex;
+  i {
+    margin-left: 15px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  &.icon-btn-editor-code {
+    padding-right: 16px;
+    i {
+      font-size: 16px;
+    }
+  }
+}
+
+.ant-btn-primary
+  background-color: #007AFF;
+  border-color: #007AFF;
+
+.ant-btn-secondary
+  color: white;
+  background-color: #8D8D8D;
+  border-color: #8D8D8D;
+  &:active
+  &:hover
+  &:focus
+  &.active
+    color: white;
+    background-color: #b2b2b2;
+    border-color: #b2b2b2;
+.ant-select-selection--single,.ant-select-selection__rendered
+  padding-left: 5px;
+  margin-left: 2px;
+  height: 40px;
+  line-height: 40px;

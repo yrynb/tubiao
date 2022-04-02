@@ -1,0 +1,145 @@
+.hot-wrapper {
+  font-size: 12px;
+  color: #999;
+  .iconfont {
+    margin-right: 5px;
+    font-size: 12px;
+    color: #999;
+  }
+  .text {
+    margin-right: 8px;
+    line-height: 20px;
+    font-size: 0.75rem;
+  }         
+}
+.tool-container {
+  .tool-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .iconfont{
+      font-size: 16px;
+    }
+    &:hover{
+      transform: scale(1.1)
+    }
+  }
+  .starBtn {
+    margin-right: 8px;
+    color: #666;
+    &.active {
+      color: #1890ff;
+    }
+  }
+  .starBtn-example {
+    margin-right: 5px;
+    color: rgba(255,255,255,0.5);
+  }
+  .bottom-right {
+    .ant-btn-link {
+      border: none;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      color: #666;
+    }
+    .iconfont {
+      cursor: pointer;
+    }
+    .editComp {
+      margin-right: 8px;
+    }
+  }
+  .iconfont {
+    font-size: 0.875rem;
+  }
+  .slot-history-time{
+    font-size: 12px;
+    color: #999;
+  } 
+  .author-wrapper{
+    margin-right: 8px;
+    font-size: 12px;
+    color: #999;
+  }
+  // 针对example图标
+  .conch-previewComp,.conch-editorComp,.conch-copyCompId{
+    font-size: 1.5rem;
+    line-height: 25px;
+  }
+  .conch-downloadComp,.conch-starComp{
+    font-size: 1rem;
+  }
+  .conch-downloadComp-example{
+    color: rgba(255,255,255,0.5);
+  }
+  .tool-item-example{
+    width: 23px;
+    height: 23px;
+    margin-left: 12px;
+    color: rgba(255,255,255,0.7);
+    &:hover .conch-previewComp{
+      background: rgba(255,255,255,0.12)
+      border-radius: 3px;
+      width: 25px;
+      height: 25px;
+    }
+    &:active .conch-previewComp{
+      background: rgba(255,255,255,0.04)
+      border-radius: 3px;
+      width: 25px;
+      height: 25px;
+    }
+    &:hover .conch-editorComp{
+      background: rgba(255,255,255,0.12)
+      border-radius: 5px;
+      width: 25px;
+      height: 25px;
+    }
+    &:active .conch-editorComp{
+      background: rgba(255,255,255,0.04)
+      border-radius: 5px;
+      width: 25px;
+      height: 25px;
+    }
+    &:hover .conch-copyCompId{
+      background: rgba(255,255,255,0.12)
+      border-radius: 5px;
+      width: 25px;
+      height: 25px;
+    }
+    &:active .conch-copyCompId{
+      background: rgba(255,255,255,0.04)
+      border-radius: 5px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+// .version-wrapper{
+//   position: absolute;
+//   top: -16px;
+//   left: -19px;
+//   width: 50px;
+//   transform: rotate(45deg);
+//   text-align: center;
+//   font-size: 13px;
+//   // font-size: 0.875rem;
+//   color: #fff;
+//   cursor:pointer;
+// }
+
+.download-example{
+  background: #1B1C1F;
+  .ant-dropdown-menu-item{
+    a {
+      color: rgba(255,255,255,0.7)
+    }
+    &:hover{
+      background-color: #333
+      a {
+        color: rgba(255,255,255,0.5)
+      }
+    }
+  }
+}

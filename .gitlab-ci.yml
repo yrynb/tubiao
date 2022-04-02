@@ -1,0 +1,63 @@
+# 定义一个job
+stages:
+ - build-dev
+ - build
+ - deploy
+variables:
+  GIT_STRATEGY: fetch
+  #项目包路径
+  DEV_PATH: '/usr/local/nginx/html/conch'
+  MASTER_PATH: '/usr/share/nginx/html/conch'
+  DIST_PATH: 'dist/*'
+  BAK_PATH: '/uino/bak/conch'
+cache: &global_cache
+  key: "$CI_COMMIT_REF_NAME"
+  paths:
+    - $DIST_PATH
+  policy: pull-push
+
+dev-job:
+  stage: build-dev
+  #allow_failure：true#允许构建失败
+  only:
+  - develop
+  tags:
+  - fll-tag
+  script:
+  - yarn install --registry=https://npm.uino.cn
+  - npm run lint
+  - yarn build
+  - \rm -rf $DEV_PATH/*
+  - \cp -rf -a ./dist/* $DEV_PATH
+
+master-build:
+  stage: build
+  cache:
+   # 继承全局配置
+   <<: *global_cache
+   policy: push
+  only:
+   - master
+  tags:
+   - 139-tag
+  script:
+  - yarn install --registry=https://npm.uino.cn
+  - npm run lint
+  - yarn build
+
+master-deploy:
+  stage: deploy
+  cache:
+   # 继承全局配置
+   <<: *global_cache
+   policy: pull
+  only:
+   - master
+  tags:
+   - 188-tag
+  script:
+  - \rm -rf $BAK_PATH/*
+  - mv $MASTER_PATH/* $BAK_PATH
+  - \cp -rf -a $DIST_PATH $MASTER_PATH
+
+

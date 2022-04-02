@@ -1,0 +1,80 @@
+// 存放需要变量的样式
+@import "variable.styl"
+@import "common.styl"
+@import "dark.styl"
+@import "editor.styl"
+
+$my-scrollbar-width = 6px
+// 自定义滚动条
+.my-scroll
+  ::-webkit-scrollbar
+    width $my-scrollbar-width
+    height 6px
+    background-color transparent
+
+  ::-webkit-scrollbar-track
+    border-radius $my-scrollbar-width
+    background-color transparent
+
+  ::-webkit-scrollbar-thumb
+    border-radius $my-scrollbar-width
+    background-color transparent
+
+  ::-webkit-scrollbar-corner
+    background transparent
+  &:hover
+    ::-webkit-scrollbar-thumb
+      border-radius $my-scrollbar-width
+      background-color #bfbfbf
+  &.map-scroll-back-color
+    &:hover
+      ::-webkit-scrollbar-thumb
+        border-radius $my-scrollbar-width
+        background-color rgba(102,102,102,1)
+  &.my-scroll-theme
+    &:hover
+      ::-webkit-scrollbar-thumb
+        border-radius $my-scrollbar-width
+        background-color $color-theme
+
+
+
+.conch-icon-compfinder,.conch-icon-echarts,.conch-icon-blank,.conch-icon-moreimagination {
+  color: #007aff;
+}
+.conch-icon-jsicon,.conch-icon-importsource {
+  color: #fad900;
+}
+.conch-icon-mdicon {
+  color: #01b7a9;
+}
+.conch-icon-cssicon {
+  color: #ff83c4;
+}
+.conch-icon-attachment,.conch-icon-echarts1,.conch-icon-imagination {
+  color: rgba(193, 53, 49, 1);
+}
+.ant-notification {
+  z-index: 9999;
+}
+
+.rotate
+  animation rotate 2s linear infinite
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}
+// 列表grid布局
+gridWrapper($gridWidth) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($gridWidth, 1fr));
+  width: 100%;
+  .component{
+    padding: 10px;
+  }
+}
